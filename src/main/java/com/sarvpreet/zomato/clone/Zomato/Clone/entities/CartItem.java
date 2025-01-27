@@ -17,7 +17,11 @@ public class CartItem {
     private Long id;
     private Integer quantity;
 
+    @OneToOne
+    private MenuItem menuItem;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
-    private MenuItem menuItem;
+    private Cart cart;
+
 }
